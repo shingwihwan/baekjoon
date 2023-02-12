@@ -33,13 +33,39 @@ case_count = input()
 # 입력받은 OX정보를 리스트에 담기위한 변수
 ox_list = []
 
-test_str = "OXOXOXO"
-
 # 테스트 케이스 개수만큼 OX를 입력받음.
 # 입력 받은 후 ox_list에 append
 for i in range(int(case_count)):
     ox = input()
     ox_list.append(ox)
-    print(ox)
 
-# print(len(test_str))
+
+def count_o(str):
+    num1 = 0
+    num2 = 0
+    before_o = False
+
+    # 첫 시작이 O면 1을 대입해주고 before_o 변수를 True
+    if str[0] == "O":
+        num1 = 1
+        num2 = 1
+        before_o = True
+
+    for i in range(1, len(str)):
+        if str[i] == "X":
+            before_o = False
+            num1 = 0
+        if str[i] == "O":
+            if before_o == True:
+                num1 += 1
+                num2 += num1
+            else:
+                before_o = True
+                num1 += 1
+                num2 += num1
+
+    return num2
+
+
+for i in range(len(ox_list)):
+    print(count_o(ox_list[i]))
