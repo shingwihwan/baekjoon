@@ -29,3 +29,28 @@
 # 영수증에 적힌 구매할 물건들의 목록으로 계산한 총 금액은
 # 20000 × 5 + 30000 × 2 + 10000 × 6 + 5000 × 8 = 260000원이다.
 # 이는 영수증에 적힌 총 금액인 260000원과 일치한다.
+
+# 총 금액
+total_payment = input()
+
+# 구매한 물건의 종류의 수
+buy_count = input()
+
+# 구매한 물건의 리스트
+buy_list = []
+
+# 구매한 물건들의 합
+buy_sum = 0
+
+# 물건의 가격 및 개수를 list에 append
+for i in range(int(buy_count)):
+    buy_list.append(input())
+
+for i in range(len(buy_list)):
+    a = buy_list[i].split(" ")
+    buy_sum += int(a[0]) * int(a[1])
+
+if buy_sum == int(total_payment):
+    print("Yes")
+else:
+    print("No")
