@@ -11,3 +11,5 @@
 
 # 예제 입력 1 - joonas 예제 출력 1 - joonas??!
 # 예제 입력 2 - baekjoon 예체 출력 2 - baekjoon??!
+
+print(input() + "??!")
