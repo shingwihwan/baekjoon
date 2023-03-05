@@ -24,3 +24,32 @@
 #               3 4 4
 #               1 4 1
 #               2 2 2
+
+nm = input()
+nm_split = nm.split(" ")
+
+n = nm_split[0]
+m = nm_split[1]
+
+n_list = [0 for i in range(int(n))]
+
+for i in range(int(m)):
+    abc = input()
+    abc_slpit = abc.split(" ")
+
+    a = int(abc_slpit[0]) - 1
+    b = int(abc_slpit[1]) - 1
+
+    c = abc_slpit[2]
+
+    if b - a > 1:
+        for j in range(b + 1):
+            n_list[j] = c
+    elif b - a == 1:
+        n_list[a] = c
+        n_list[b] = c
+    elif b - a == 0:
+        n_list[b] = c
+
+for k in range(len(n_list)):
+    print(n_list[k], end=' ')
