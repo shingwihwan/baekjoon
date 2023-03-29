@@ -13,4 +13,4 @@ for i in range(1, max_star_count + 1, 2):
 
 for j in range(max_star_count, 0, -2):
     space = int((max_star_count - j) / 2)
-    print((space * " ") +j * '*')
+    print((space * " ") + j * '*')
